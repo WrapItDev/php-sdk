@@ -55,6 +55,10 @@ class WrapIt {
         $helper = new WrapItLoginHelper($this->public_key, $this->private_key, $this->requester);
     }
 
+    public function getClientId() {
+        return $this->public_key;
+    }
+
 }
 
 ?>
