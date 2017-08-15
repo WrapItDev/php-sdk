@@ -1,7 +1,7 @@
 # WrapIt SDK for PHP
 
-[![Scrutinizer Build](https://img.shields.io/scrutinizer/build/g/WrapItDev/php-sdk.svg)]()
-[![Scrutinizer Coverage](https://img.shields.io/scrutinizer/coverage/g/WrapItDev/php-sdk.svg)]()
+[![Build Status](https://scrutinizer-ci.com/g/WrapItDev/php-sdk/badges/build.png?b=master)](https://scrutinizer-ci.com/g/WrapItDev/php-sdk/build-status/master)
+[![Code Coverage](https://scrutinizer-ci.com/g/WrapItDev/php-sdk/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/WrapItDev/php-sdk/?branch=master)
 
 
 ## Installation
