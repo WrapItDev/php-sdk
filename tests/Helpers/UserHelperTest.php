@@ -22,8 +22,18 @@ final class UserHelperTest extends TestCase {
         $this->helper = new WrapItUserHelper($wi, "example_token");
     }
 
+    /**
+     * @expectedException \WrapIt\Exceptions\WrapItResponseException
+     */
     public function testUserData() {
-        $url = $this->helper->getUserData();
+        $data = $this->helper->getUserData();
+    }
+
+    /**
+     * @expectedException \WrapIt\Exceptions\WrapItResponseException
+     */
+    public function testUserPicture() {
+        $url = $this->helper->getProfilePicture();
     }
 
 }

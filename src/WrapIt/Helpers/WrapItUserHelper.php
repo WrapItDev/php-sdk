@@ -5,7 +5,7 @@ namespace WrapIt\Helpers;
 use WrapIt\WrapIt;
 use WrapIt\Exceptions\WrapItParameterException;
 use WrapIt\Exceptions\WrapItResponseException;
-use WrapIt\Http\WrapItApiRequester;
+use WrapIt\Http\WrapItUserRequester;
 
 /**
  * Class WrapItUserHelper
@@ -33,7 +33,25 @@ class WrapItUserHelper {
     }
 
     public function getUserData($userid = "me") {
-        return $this->requester->get("people/$userid");
+        $data = $this->requester->get("people/$userid");
+        if (!isset($data["error"])) {
+            return $data;
+        } else {
+            throw new WrapItResponseException($data["error"]["message"]);
+        }
+    }
+
+    public function getProfilePicture($userid = "me") {
+        $data = $this->requester->get("people/$userid/picture", array("redirect" => "false"));
+        if (isset($data["error"])) {
+            throw new WrapItResponseException($data["error"]["message"]);
+        }
+
+        if (isset($data["url"])) {
+            return $data["url"];
+        } else {
+            throw new WrapItResponseException("Unknown Exception");
+        }
     }
 
 }
