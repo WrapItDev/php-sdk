@@ -6,6 +6,11 @@ use \WrapIt\Exception\WrapItParameterException;
 use \WrapIt\Exception\WrapItResponseException;
 use \WrapIt\Http\WrapItApiRequester;
 
+/**
+ * Class WrapItLoginHelper
+ *
+ * @package WrapIt
+ */
 class WrapItLoginHelper {
 
     private $access_token = null;

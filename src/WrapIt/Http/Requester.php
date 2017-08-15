@@ -2,6 +2,11 @@
 
 namespace WrapIt\Http;
 
+/**
+ * Class Requester
+ *
+ * @package WrapIt
+ */
 class Requester {
 
     protected function request($data) {

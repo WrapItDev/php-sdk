@@ -2,6 +2,11 @@
 
 namespace WrapIt\Http;
 
+/**
+ * Class WrapItApiRequester
+ *
+ * @package WrapIt
+ */
 class WrapItApiRequester extends Requester {
 
     private $domain = null;

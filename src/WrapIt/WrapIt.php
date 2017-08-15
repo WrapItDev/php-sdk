@@ -6,6 +6,11 @@ use \WrapIt\Exception\WrapItParameterException;
 use \WrapIt\Http\WrapItApiRequester;
 use \WrapIt\Helpers\WrapItLoginHelper;
 
+/**
+ * Class WrapIt
+ *
+ * @package WrapIt
+ */
 class WrapIt {
 
     private $config;
