@@ -17,5 +17,5 @@ install:
   - travis_retry composer install --prefer-dist --no-interaction
 
 script:
-  - vendor/bin/phpcs
+#  - vendor/bin/phpcs
   - vendor/bin/phpunit --coverage-text --exclude-group integration
