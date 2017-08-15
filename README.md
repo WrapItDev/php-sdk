@@ -15,7 +15,7 @@ composer require wrapit/php-sdk
 ## Usage
 
 Simple GET example to get data of a user profile
-```PHP
+```php
 $wi = new \WrapIt\WrapIt([
     'domain' => '{domain}',
     'client_id' => '{client-id}',
@@ -27,6 +27,7 @@ $wi = new \WrapIt\WrapIt([
 $userhelper = new \WrapIt\Helpers\WrapItUserHelper($wi, "{access-token}");
 
 try {
+    // Get data from the /people/me api
     $user = $userhelper->getUserData("me");
 } catch (\WrapIt\Exceptions\WrapItResponseException $e) {
     echo 'The API returned an error: ' . $e->getMessage();
