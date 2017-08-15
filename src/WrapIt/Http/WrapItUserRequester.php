@@ -22,7 +22,7 @@ class WrapItUserRequester extends Requester {
             "url" => "https://" . $this->domain . "/" . $api,
             "get" => $data,
             "headers" => array(
-                "Authorization: Bearer ".$this->access_token
+                "Authorization: Bearer " . $this->access_token
             )
         ));
     }
@@ -33,7 +33,7 @@ class WrapItUserRequester extends Requester {
             "url" => "https://" . $this->domain . "/" . $api,
             "post" => $data,
             "headers" => array(
-                "Authorization: Bearer ".$this->access_token
+                "Authorization: Bearer " . $this->access_token
             )
         ));
     }

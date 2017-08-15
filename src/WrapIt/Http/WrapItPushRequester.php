@@ -29,7 +29,7 @@ class WrapItPushRequester extends Requester {
             "post" => $data,
             "body_type" => "applicaton/json",
             "headers" => array(
-                "Authorization: Bearer ".$this->access_token
+                "Authorization: Bearer " . $this->access_token
             )
         ));
     }

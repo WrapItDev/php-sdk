@@ -4,7 +4,6 @@ namespace WrapIt\Helpers;
 
 use WrapIt\WrapIt;
 use WrapIt\Exceptions\WrapItParameterException;
-use WrapIt\Exceptions\WrapItResponseException;
 use WrapIt\Http\WrapItApiRequester;
 use WrapIt\Http\WrapItPushRequester;
 

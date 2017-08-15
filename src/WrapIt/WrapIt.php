@@ -46,7 +46,7 @@ class WrapIt {
         $this->config["domain"] = str_replace("https://", "", $this->config["domain"]);
         $this->config["domain"] = str_replace("http://", "", $this->config["domain"]);
         $this->config["domain"] = rtrim($this->config["domain"], "/");
-        $this->server_uri = "https://".$this->config["domain"];
+        $this->server_uri = "https://" . $this->config["domain"];
 
         $this->domain = $this->config["domain"];
         $this->public_key = $this->config["client_id"];
