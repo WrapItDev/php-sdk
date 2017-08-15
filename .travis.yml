@@ -7,4 +7,15 @@ php:
   - 7.0
   - 7.1
 
-sudo: required
+sudo: false
+
+before_install:
+  - travis_retry composer self-update
+
+install:
+  - travis_retry composer require --dev --no-update squizlabs/php_codesniffer
+  - travis_retry composer install --prefer-dist --no-interaction
+
+script:
+  - vendor/bin/phpcs
+  - vendor/bin/phpunit --coverage-text --exclude-group integration
