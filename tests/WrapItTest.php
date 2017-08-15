@@ -18,10 +18,12 @@ final class WrapItTest extends TestCase {
         ));
     }
 
+
+    /**
+     * @expectedException \WrapIt\Exception\WrapItParameterException
+     */
     public function testCreateFromInvalidConfig()
     {
-        $this->expectException(WrapItParameterException::class);
-
         $wi = new WrapIt(array());
     }
 
