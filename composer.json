@@ -2,6 +2,14 @@
     "name": "wrapit/php-sdk",
     "description": "WrapIt SDK for PHP",
     "homepage": "https://github.com/WrapItDev/php-sdk",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bence Skorka",
+            "email": "skorka.bence@wrapit.hu",
+            "role": "Developer"
+        }
+    ],
     "require": {
         "php": "^5.4|^7.0",
         "curl/curl": "^1.5"
