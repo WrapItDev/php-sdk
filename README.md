@@ -1,6 +1,6 @@
 # WrapIt SDK for PHP
 
-[![Scrutinizer Build](https://img.shields.io/scrutinizer/build/g/WrapItDev/php-sdk/.svg)]()
+[![Scrutinizer Build](https://img.shields.io/scrutinizer/build/g/WrapItDev/php-sdk.svg)]()
 [![Scrutinizer Coverage](https://img.shields.io/scrutinizer/coverage/g/WrapItDev/php-sdk.svg)]()
 
 
