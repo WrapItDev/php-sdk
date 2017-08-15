@@ -9,7 +9,7 @@ use \WrapIt\Exception\WrapItParameterException;
 
 final class WrapItTest extends TestCase {
 
-    public function testCreateFromValidConfig() : void
+    public function testCreateFromValidConfig()
     {
         $wi = new WrapIt(array(
             "domain" => "testing.wrapit.hu",
@@ -18,14 +18,14 @@ final class WrapItTest extends TestCase {
         ));
     }
 
-    public function testCreateFromInvalidConfig() : void
+    public function testCreateFromInvalidConfig()
     {
         $this->expectException(WrapItParameterException::class);
 
         $wi = new WrapIt(array());
     }
 
-    public function testClientIdReturnedSuccessfully() : void
+    public function testClientIdReturnedSuccessfully()
     {
         $wi = new WrapIt(array(
             "domain" => "testing.wrapit.hu",
