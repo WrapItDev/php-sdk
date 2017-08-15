@@ -42,7 +42,7 @@ class WrapItPushHelper {
 
         $apirequester = new WrapItApiRequester($this->domain);
 
-        $data = $this->requester->post("access_token", array(
+        $data = $apirequester->post("access_token", array(
             "client_id" => $this->client_id,
             "client_secret" => $this->client_secret,
             "grant_type" => "app_token"
