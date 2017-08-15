@@ -12,7 +12,7 @@ class WrapItApiRequester extends Requester
 
     private $domain = null;
 
-    function __construct($domain)
+    public function __construct($domain)
     {
         $this->domain = $domain;
     }

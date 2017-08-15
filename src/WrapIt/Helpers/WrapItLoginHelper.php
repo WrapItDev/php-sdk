@@ -20,7 +20,7 @@ class WrapItLoginHelper
 
     private $requester;
 
-    function __construct($client_id, $client_secret, $requester)
+    public function __construct($client_id, $client_secret, $requester)
     {
         $this->client_id = $client_id;
         $this->client_secret = $client_secret;
