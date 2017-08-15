@@ -59,4 +59,29 @@ class WrapItPushHelper {
         $data = $this->requester->post("pushservice/$userid", $data);
     }
 
+    public function getPushTemplate() {
+        return array(
+            "categories" => array(),
+            "device_types" => array(
+                "mail" => false,
+                "sms" => false,
+                "browser" => false,
+                "phone" => false
+            ),
+            "properties" => array(
+                "attribution" => null,
+                "app_icon" => null,
+                "hero_image" => null,
+                "badge" => null,
+                "sound" => array(
+                    "UWP" => null,
+                    "Apple" => null
+                )
+            ),
+            "title" => null,
+            "lines" => array(),
+            "actions" => array()
+        );
+    }
+
 }
