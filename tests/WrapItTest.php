@@ -2,10 +2,10 @@
 
 namespace WrapIt\Tests;
 
-use \PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\TestCase;
 
-use \WrapIt\WrapIt;
-use \WrapIt\Exception\WrapItParameterException;
+use WrapIt\WrapIt;
+use WrapIt\Exceptions\WrapItParameterException;
 
 final class WrapItTest extends TestCase {
 
@@ -20,7 +20,7 @@ final class WrapItTest extends TestCase {
 
 
     /**
-     * @expectedException \WrapIt\Exception\WrapItParameterException
+     * @expectedException \WrapIt\Exceptions\WrapItParameterException
      */
     public function testCreateFromInvalidConfig()
     {
