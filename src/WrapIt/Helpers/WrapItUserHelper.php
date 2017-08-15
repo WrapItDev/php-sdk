@@ -34,7 +34,7 @@ class WrapItUserHelper {
 
     public function getUserData($userid = "me") {
         $data = $this->requester->get("people/$userid");
-        if (!isset($data["error"])) {
+        if ($data != null && !isset($data["error"])) {
             return $data;
         } else {
             throw new WrapItResponseException($data["error"]["message"]);
