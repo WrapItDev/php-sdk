@@ -14,7 +14,6 @@ use WrapIt\Http\WrapItApiRequester;
  */
 class WrapItLoginHelper {
 
-    private $access_token = null;
     private $client_id = null;
     private $client_secret = null;
 
@@ -85,7 +84,6 @@ class WrapItLoginHelper {
         $data = $this->requester->post("access_token", $post);
 
         if (!isset($data["error"]) && isset($data["access_token"])) {
-            $this->access_token = $data["access_token"];
             return $data["access_token"];
         } else if (isset($data["error"])) {
             throw new WrapItResponseException($data["error"]["message"]);

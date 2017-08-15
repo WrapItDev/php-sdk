@@ -9,8 +9,9 @@ use WrapIt\Exceptions\WrapItParameterException;
  *
  * @package WrapIt
  */
-class Requester
-{
+abstract class Requester {
+
+    protected $domain = null;
 
     protected function request($data) {
         $data = array_merge(array(
@@ -99,4 +100,12 @@ class Requester
                 break;
         }
     }
+
+    public function getDomain() {
+        return $this->domain;
+    }
+
+    abstract public function get($api, $data);
+    abstract public function post($api, $data);
+
 }

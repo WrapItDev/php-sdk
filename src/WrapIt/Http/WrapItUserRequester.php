@@ -7,17 +7,23 @@ namespace WrapIt\Http;
  *
  * @package WrapIt
  */
-class WrapItApiRequester extends Requester {
+class WrapItUserRequester extends Requester {
 
-    public function __construct($domain) {
+    private $access_token = null;
+
+    public function __construct($domain, $token) {
         $this->domain = $domain;
+        $this->access_token = $token;
     }
 
     public function get($api, $data = array()) {
         $api = ltrim("/", $api);
         return $this->request(array(
             "url" => "https://" . $this->domain . "/" . $api,
-            "get" => $data
+            "get" => $data,
+            "headers" => array(
+                "Authorization: Bearer ".$this->access_token
+            )
         ));
     }
 
@@ -25,8 +31,11 @@ class WrapItApiRequester extends Requester {
         $api = ltrim("/", $api);
         return $this->request(array(
             "url" => "https://" . $this->domain . "/" . $api,
-            "post" => $data
+            "post" => $data,
+            "headers" => array(
+                "Authorization: Bearer ".$this->access_token
+            )
         ));
     }
-    
+
 }
