@@ -2,9 +2,9 @@
 
 namespace WrapIt;
 
-use \WrapIt\Exception\WrapItParameterException;
-use \WrapIt\Http\WrapItApiRequester;
-use \WrapIt\Helpers\WrapItLoginHelper;
+use WrapIt\Exception\WrapItParameterException;
+use WrapIt\Http\WrapItApiRequester;
+use WrapIt\Helpers\WrapItLoginHelper;
 
 /**
  * Class WrapIt
