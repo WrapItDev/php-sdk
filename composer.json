@@ -5,5 +5,8 @@
     "require": {
         "php": "^5.4|^7.0",
         "curl/curl": "^1.5"
+    },
+    "autoload": {
+        "psr-4": {"WrapIt\\": "src/WrapIt/"}
     }
 }
