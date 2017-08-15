@@ -1,6 +1,6 @@
 # WrapIt SDK for PHP
 
-[![Build Status](https://scrutinizer-ci.com/g/WrapItDev/php-sdk/badges/build.png?b=master)](https://scrutinizer-ci.com/g/WrapItDev/php-sdk/build-status/master)
+[![Build Status](https://travis-ci.org/WrapItDev/php-sdk.svg?branch=master)](https://travis-ci.org/WrapItDev/php-sdk)
 [![Code Coverage](https://scrutinizer-ci.com/g/WrapItDev/php-sdk/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/WrapItDev/php-sdk/?branch=master)
 
 
