@@ -25,7 +25,7 @@ final class PushHelperTest extends TestCase {
      * @expectedException \WrapIt\Exceptions\WrapItParameterException
      */
     public function testInvalidToken() {
-        $helper = new WrapItPushHelper($wi, "example_token");
+        $helper = new WrapItPushHelper($this->wrapit, "example_token");
     }
 
 }
