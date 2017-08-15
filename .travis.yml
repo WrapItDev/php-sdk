@@ -9,4 +9,4 @@ php:
 
 sudo: false
 
-script: tester.sh
+script: ./tester.sh
