@@ -7,8 +7,6 @@ namespace WrapIt\Exceptions;
  *
  * @package WrapIt
  */
-class WrapItResponseException extends WrapItSDKException {
-
+class WrapItResponseException extends WrapItSDKException
+{
 }
-
-?>

@@ -7,15 +7,18 @@ namespace WrapIt\Http;
  *
  * @package WrapIt
  */
-class WrapItApiRequester extends Requester {
+class WrapItApiRequester extends Requester
+{
 
     private $domain = null;
 
-    function __construct($domain) {
+    function __construct($domain)
+    {
         $this->domain = $domain;
     }
 
-    public function get($api, $data = array()) {
+    public function get($api, $data = array())
+    {
         $api = ltrim("/", $api);
         return $this->request(array(
             "url" => "https://" . $this->domain . "/" . $api,
@@ -23,7 +26,8 @@ class WrapItApiRequester extends Requester {
         ));
     }
 
-    public function post($api, $data) {
+    public function post($api, $data)
+    {
         $api = ltrim("/", $api);
         return $this->request(array(
             "url" => "https://" . $this->domain . "/" . $api,
@@ -31,10 +35,8 @@ class WrapItApiRequester extends Requester {
         ));
     }
 
-    public function getDomain() {
+    public function getDomain()
+    {
         return $this->domain;
     }
-
 }
-
-?>

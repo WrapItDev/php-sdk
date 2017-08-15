@@ -11,7 +11,8 @@ use \WrapIt\Helpers\WrapItLoginHelper;
  *
  * @package WrapIt
  */
-class WrapIt {
+class WrapIt
+{
 
     private $config;
 
@@ -23,7 +24,8 @@ class WrapIt {
 
     private $requester = null;
 
-    public function __construct($config) {
+    public function __construct($config)
+    {
         $this->config = array_merge(array(
             "domain" => null,
             "client_id" => null,
@@ -53,17 +55,16 @@ class WrapIt {
         $this->requester = new WrapItApiRequester($this->config["domain"]);
     }
 
-    public function getLoginHelper() {
+    public function getLoginHelper()
+    {
         if ($this->public_key == null) {
             throw new WrapItParameterException("Public key not set");
         }
         $helper = new WrapItLoginHelper($this->public_key, $this->private_key, $this->requester);
     }
 
-    public function getClientId() {
+    public function getClientId()
+    {
         return $this->public_key;
     }
-
 }
-
-?>

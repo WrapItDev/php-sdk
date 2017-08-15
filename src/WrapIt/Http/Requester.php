@@ -7,9 +7,11 @@ namespace WrapIt\Http;
  *
  * @package WrapIt
  */
-class Requester {
+class Requester
+{
 
-    protected function request($data) {
+    protected function request($data)
+    {
         $data = array_merge(array(
             "url" => null,
             "get" => array(),
@@ -96,7 +98,4 @@ class Requester {
                 break;
         }
     }
-
 }
-
-?>
