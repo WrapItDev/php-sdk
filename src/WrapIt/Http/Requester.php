@@ -3,6 +3,7 @@
 namespace WrapIt\Http;
 
 use WrapIt\Exceptions\WrapItParameterException;
+use WrapIt\Exceptions\WrapItHTTPException;
 
 /**
  * Class Requester
@@ -80,11 +81,9 @@ abstract class Requester {
         $response_header = curl_getinfo($ch);
         curl_close($ch);
 
-        $this->last_data = array(
-            "response_header" => $response_header,
-            "raw_result" => $result,
-            "input" => $data
-        );
+        if ($response_header["http_code"] > 299) {
+            throw new WrapItHTTPException("HTTP Code: ".$response_header["http_code"]);
+        }
 
         switch ($data["response_type"]) {
             case "json":
