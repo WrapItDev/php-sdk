@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/WrapItDev/php-sdk.svg?branch=master)](https://travis-ci.org/WrapItDev/php-sdk)
 [![Code Coverage](https://scrutinizer-ci.com/g/WrapItDev/php-sdk/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/WrapItDev/php-sdk/?branch=master)
+[![Packagist](https://img.shields.io/packagist/v/wrapit/php-sdk.svg)]()
 
 
 ## Installation
