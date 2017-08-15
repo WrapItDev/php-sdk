@@ -1,2 +1,2 @@
 # WrapIt SDK for PHP
-[![Build Status](https://api.travis-ci.org/WrapItDev/php-sdk.svg)](https://travis-ci.org/WrapItDev/php-sdk/)
+[![Build Status](https://travis-ci.org/WrapItDev/php-sdk.svg?branch=master)](https://travis-ci.org/WrapItDev/php-sdk)

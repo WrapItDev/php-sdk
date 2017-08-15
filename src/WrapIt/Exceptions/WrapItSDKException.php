@@ -7,6 +7,4 @@ namespace WrapIt\Exceptions;
  *
  * @package WrapIt
  */
-class WrapItSDKException extends \Exception
-{
-}
+class WrapItSDKException extends \Exception {}

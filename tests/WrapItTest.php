@@ -28,6 +28,53 @@ final class WrapItTest extends TestCase
         $wi = new WrapIt(array());
     }
 
+    /**
+     * @expectedException \WrapIt\Exceptions\WrapItParameterException
+     */
+    public function testCreateFromInvalidConfig2()
+    {
+        $wi = new WrapIt(array(
+            "domain" => null,
+            "client_id" => null,
+            "client_secret" => null
+        ));
+    }
+
+    /**
+     * @expectedException \WrapIt\Exceptions\WrapItParameterException
+     */
+    public function testCreateFromInvalidConfig3()
+    {
+        $wi = new WrapIt(array(
+            "domain" => "testing.wrapit.hu",
+            "client_id" => null,
+            "client_secret" => null
+        ));
+    }
+
+    /**
+     * @expectedException \WrapIt\Exceptions\WrapItParameterException
+     */
+    public function testCreateFromInvalidConfig4()
+    {
+        $wi = new WrapIt(array(
+            "domain" => "testing.wrapit.hu",
+            "client_id" => "test_client_id",
+            "client_secret" => null
+        ));
+    }
+
+    /**
+     * @expectedException \WrapIt\Exceptions\WrapItParameterException
+     */
+    public function testCreateFromInvalidConfig5()
+    {
+        $wi = new WrapIt(array(
+            "domain" => "testing.wrapit.hu",
+            "client_secret" => "test_client_secret"
+        ));
+    }
+
     public function testClientIdReturnedSuccessfully()
     {
         $wi = new WrapIt(array(

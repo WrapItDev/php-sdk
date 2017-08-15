@@ -11,8 +11,7 @@ use WrapIt\Http\WrapItApiRequester;
  *
  * @package WrapIt
  */
-class WrapItLoginHelper
-{
+class WrapItLoginHelper {
 
     private $access_token = null;
     private $client_id = null;
@@ -20,15 +19,13 @@ class WrapItLoginHelper
 
     private $requester;
 
-    public function __construct($client_id, $client_secret, $requester)
-    {
+    public function __construct($client_id, $client_secret, $requester) {
         $this->client_id = $client_id;
         $this->client_secret = $client_secret;
         $this->requester = $requester;
     }
 
-    public function generateLoginUrl($opt)
-    {
+    public function generateLoginUrl($opt) {
         $opt = array_merge(array(
             "redirect_uri" => null,
             "scope" => array("profile"),
@@ -54,8 +51,7 @@ class WrapItLoginHelper
         return "https://" . $this->requester->getDomain() . "/auth?" . http_build_query($parameters);
     }
 
-    public function exchangeAccessToken($opt)
-    {
+    public function exchangeAccessToken($opt) {
         $opt = array_merge(array(
             "redirect_uri" => null,
             "code" => null,
