@@ -23,7 +23,7 @@ class WrapItPushRequester extends Requester {
     }
 
     public function post($api, $data) {
-        $api = ltrim("/", $api);
+        $api = ltrim($api, "/");
         return $this->request(array(
             "url" => "https://" . $this->domain . "/" . $api,
             "post" => $data,

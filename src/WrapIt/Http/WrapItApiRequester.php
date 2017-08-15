@@ -14,7 +14,7 @@ class WrapItApiRequester extends Requester {
     }
 
     public function get($api, $data = array()) {
-        $api = ltrim("/", $api);
+        $api = ltrim($api, "/");
         return $this->request(array(
             "url" => "https://" . $this->domain . "/" . $api,
             "get" => $data
@@ -22,11 +22,11 @@ class WrapItApiRequester extends Requester {
     }
 
     public function post($api, $data) {
-        $api = ltrim("/", $api);
+        $api = ltrim($api, "/");
         return $this->request(array(
             "url" => "https://" . $this->domain . "/" . $api,
             "post" => $data
         ));
     }
-    
+
 }
