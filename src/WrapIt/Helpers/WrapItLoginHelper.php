@@ -2,6 +2,7 @@
 
 namespace WrapIt\Helpers;
 
+use WrapIt\WrapIt;
 use WrapIt\Exception\WrapItParameterException;
 use WrapIt\Exception\WrapItResponseException;
 use WrapIt\Http\WrapItApiRequester;
@@ -19,10 +20,14 @@ class WrapItLoginHelper {
 
     private $requester;
 
-    public function __construct($client_id, $client_secret, $requester) {
-        $this->client_id = $client_id;
-        $this->client_secret = $client_secret;
-        $this->requester = $requester;
+    public function __construct($wi) {
+        if (!($wi instanceof WrapIt)) {
+            throw new WrapItParameterException("WrapIt class required");
+        }
+
+        $this->client_id = $wi->getClientId();
+        $this->client_secret = $wi->getClientSecret();
+        $this->requester = new WrapItApiRequester($wi->getDomain());
     }
 
     public function generateLoginUrl($opt) {

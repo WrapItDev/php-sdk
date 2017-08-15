@@ -20,6 +20,7 @@ class WrapIt {
     private $sdk_version = "0.1";
     private $public_key = null;
     private $private_key = null;
+    private $domain = null;
 
     private $requester = null;
 
@@ -47,20 +48,23 @@ class WrapIt {
         $this->config["domain"] = rtrim($this->config["domain"], "/");
         $this->server_uri = "https://".$this->config["domain"];
 
+        $this->domain = $this->config["domain"];
         $this->public_key = $this->config["client_id"];
         $this->private_key = $this->config["client_secret"];
 
         $this->requester = new WrapItApiRequester($this->config["domain"]);
     }
 
-    public function getLoginHelper() {
-        if ($this->public_key == null) {
-            throw new WrapItParameterException("Public key not set");
-        }
-        $helper = new WrapItLoginHelper($this->public_key, $this->private_key, $this->requester);
-    }
-
     public function getClientId() {
         return $this->public_key;
     }
+
+    public function getClientSecret() {
+        return $this->private_key;
+    }
+
+    public function getDomain() {
+        return $this->domain;
+    }
+
 }

@@ -7,11 +7,9 @@ use PHPUnit\Framework\TestCase;
 use WrapIt\WrapIt;
 use WrapIt\Exceptions\WrapItParameterException;
 
-final class WrapItTest extends TestCase
-{
+final class WrapItTest extends TestCase {
 
-    public function testCreateFromValidConfig()
-    {
+    public function testCreateFromValidConfig() {
         $wi = new WrapIt(array(
             "domain" => "testing.wrapit.hu",
             "client_id" => "test_client_id",
@@ -23,16 +21,14 @@ final class WrapItTest extends TestCase
     /**
      * @expectedException \WrapIt\Exceptions\WrapItParameterException
      */
-    public function testCreateFromInvalidConfig()
-    {
+    public function testCreateFromInvalidConfig() {
         $wi = new WrapIt(array());
     }
 
     /**
      * @expectedException \WrapIt\Exceptions\WrapItParameterException
      */
-    public function testCreateFromInvalidConfig2()
-    {
+    public function testCreateFromInvalidConfig2() {
         $wi = new WrapIt(array(
             "domain" => null,
             "client_id" => null,
@@ -43,8 +39,7 @@ final class WrapItTest extends TestCase
     /**
      * @expectedException \WrapIt\Exceptions\WrapItParameterException
      */
-    public function testCreateFromInvalidConfig3()
-    {
+    public function testCreateFromInvalidConfig3() {
         $wi = new WrapIt(array(
             "domain" => "testing.wrapit.hu",
             "client_id" => null,
@@ -55,8 +50,7 @@ final class WrapItTest extends TestCase
     /**
      * @expectedException \WrapIt\Exceptions\WrapItParameterException
      */
-    public function testCreateFromInvalidConfig4()
-    {
+    public function testCreateFromInvalidConfig4() {
         $wi = new WrapIt(array(
             "domain" => "testing.wrapit.hu",
             "client_id" => "test_client_id",
@@ -67,16 +61,14 @@ final class WrapItTest extends TestCase
     /**
      * @expectedException \WrapIt\Exceptions\WrapItParameterException
      */
-    public function testCreateFromInvalidConfig5()
-    {
+    public function testCreateFromInvalidConfig5() {
         $wi = new WrapIt(array(
             "domain" => "testing.wrapit.hu",
             "client_secret" => "test_client_secret"
         ));
     }
 
-    public function testClientIdReturnedSuccessfully()
-    {
+    public function testClientIdReturnedSuccessfully() {
         $wi = new WrapIt(array(
             "domain" => "testing.wrapit.hu",
             "client_id" => "test_client_id",
