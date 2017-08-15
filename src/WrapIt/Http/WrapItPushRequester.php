@@ -27,7 +27,7 @@ class WrapItPushRequester extends Requester {
         return $this->request(array(
             "url" => "https://" . $this->domain . "/" . $api,
             "post" => $data,
-            "body_type" => "applicaton/json"
+            "body_type" => "applicaton/json",
             "headers" => array(
                 "Authorization: Bearer ".$this->access_token
             )
