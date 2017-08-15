@@ -46,7 +46,7 @@ class WrapItLoginHelper {
             "client_id" => $this->client_id,
             "redirect_uri" => $opt["redirect_uri"],
             "scope" => implode(" ", $opt["scope"]),
-            "response_type" => $opt["state"]
+            "response_type" => $opt["response_type"]
         );
 
         if ($opt["state"] != null) {
