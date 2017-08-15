@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 use WrapIt\WrapIt;
 use WrapIt\Exceptions\WrapItParameterException;
 use WrapIt\Exceptions\WrapItResponseException;
-use WrapIt\Helpers\WrapItLoginHelper;
+use WrapIt\Helpers\WrapItUserHelper;
 
 final class UserHelperTest extends TestCase {
 
