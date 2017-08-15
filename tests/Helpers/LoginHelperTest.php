@@ -6,6 +6,7 @@ use PHPUnit\Framework\TestCase;
 
 use WrapIt\WrapIt;
 use WrapIt\Exceptions\WrapItParameterException;
+use WrapIt\Exception\WrapItResponseException;
 use WrapIt\Helpers\WrapItLoginHelper;
 
 final class LoginHelperTest extends TestCase {
@@ -25,6 +26,16 @@ final class LoginHelperTest extends TestCase {
         $url = $this->helper->generateLoginUrl(array(
             "redirect_uri" => "https://google.com/",
             "scope" => array("profile", "mail")
+        ));
+    }
+
+    /**
+     * @expectedException \WrapIt\Exception\WrapItResponseException
+     */
+    public function testTokenExchange() {
+        $token = $this->helper->exchangeAccessToken(array(
+            "redirect_uri" => "https://google.com/",
+            "code" => "0123456"
         ));
     }
 
