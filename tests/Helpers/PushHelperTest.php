@@ -21,11 +21,15 @@ final class PushHelperTest extends TestCase {
         ));
     }
 
+    public function testPushCorrectCreationWithToken() {
+        $helper = new WrapItPushHelper($this->wrapit, "example_token");
+    }
+
     /**
      * @expectedException \WrapIt\Exceptions\WrapItParameterException
      */
-    public function testInvalidToken() {
-        $helper = new WrapItPushHelper($this->wrapit, "example_token");
+    public function testInvalidCredentials() {
+        $helper = new WrapItPushHelper($this->wrapit);
     }
 
 }
