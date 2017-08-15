@@ -7,6 +7,11 @@ use PHPUnit\Framework\TestCase;
 use WrapIt\WrapIt;
 use WrapIt\Exceptions\WrapItParameterException;
 
+/**
+ * Class WrapItTest
+ *
+ * @package WrapItTest
+ */
 final class WrapItTest extends TestCase {
 
     public function testCreateFromValidConfig()
