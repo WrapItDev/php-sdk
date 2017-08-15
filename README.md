@@ -1,7 +1,7 @@
 # WrapIt SDK for PHP
 
-[![Build Status](https://travis-ci.org/WrapItDev/php-sdk.svg?branch=master)](https://travis-ci.org/WrapItDev/php-sdk)
-[![Packagist](https://img.shields.io/packagist/v/wrapit/php-sdk.svg)](https://packagist.org/packages/wrapit/php-sdk)
+[![Scrutinizer Build](https://img.shields.io/scrutinizer/build/g/WrapItDev/php-sdk/.svg)]()
+[![Scrutinizer Coverage](https://img.shields.io/scrutinizer/coverage/g/WrapItDev/php-sdk.svg)]()
 
 
 ## Installation
