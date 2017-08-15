@@ -40,8 +40,8 @@ abstract class Requester {
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_USERAGENT, $data["useragent"]);
         if ($data["post"] != null) {
-            $data["headers"][] = "Content-type: ".$data["body_type"];
-            $data["headers"][] = "Charset: ".$data["body_charset"];
+            $data["headers"][] = "Content-type: " . $data["body_type"];
+            $data["headers"][] = "Charset: " . $data["body_charset"];
 
             switch ($data["body_type"]) {
                 case "application/x-www-form-urlencoded":
