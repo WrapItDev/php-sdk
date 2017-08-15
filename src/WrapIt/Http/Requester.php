@@ -2,6 +2,8 @@
 
 namespace WrapIt\Http;
 
+use WrapIt\Exceptions\WrapItParameterException;
+
 /**
  * Class Requester
  *
@@ -24,7 +26,7 @@ class Requester
         ), $data);
 
         if ($data["url"] == null) {
-            throw new \WrapIt\Exception\WrapItException("Missing data: url");
+            throw new WrapItParameterException("Missing data: url");
         }
 
         $url = $data["url"];
@@ -53,11 +55,11 @@ class Requester
                     if (is_string($data["post"])) {
                         curl_setopt($ch, CURLOPT_POSTFIELDS, $data["post"]);
                     } else {
-                        throw new \WrapIt\Exception\WrapItException("XML data must be pre-processed!");
+                        throw new WrapItParameterException("XML data must be pre-processed!");
                     }
                     break;
                 default:
-                    throw new \WrapIt\Exception\WrapItException("Invalid body type");
+                    throw new WrapItParameterException("Invalid body type");
                     break;
             }
 

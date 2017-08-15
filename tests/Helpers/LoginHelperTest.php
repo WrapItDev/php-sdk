@@ -6,7 +6,7 @@ use PHPUnit\Framework\TestCase;
 
 use WrapIt\WrapIt;
 use WrapIt\Exceptions\WrapItParameterException;
-use WrapIt\Exception\WrapItResponseException;
+use WrapIt\Exceptions\WrapItResponseException;
 use WrapIt\Helpers\WrapItLoginHelper;
 
 final class LoginHelperTest extends TestCase {
@@ -30,7 +30,7 @@ final class LoginHelperTest extends TestCase {
     }
 
     /**
-     * @expectedException \WrapIt\Exception\WrapItResponseException
+     * @expectedException \WrapIt\Exceptions\WrapItResponseException
      */
     public function testTokenExchange() {
         $token = $this->helper->exchangeAccessToken(array(

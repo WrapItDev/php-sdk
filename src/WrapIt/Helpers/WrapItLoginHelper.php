@@ -3,8 +3,8 @@
 namespace WrapIt\Helpers;
 
 use WrapIt\WrapIt;
-use WrapIt\Exception\WrapItParameterException;
-use WrapIt\Exception\WrapItResponseException;
+use WrapIt\Exceptions\WrapItParameterException;
+use WrapIt\Exceptions\WrapItResponseException;
 use WrapIt\Http\WrapItApiRequester;
 
 /**
