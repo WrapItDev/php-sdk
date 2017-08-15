@@ -1,11 +1,13 @@
 <?php
 
+namespace WrapIt\Tests;
+
 use \PHPUnit\Framework\TestCase;
 
 use \WrapIt\WrapIt;
 use \WrapIt\Exception\WrapItParameterException;
 
-final class EmailTest extends TestCase {
+final class WrapItTest extends TestCase {
 
     public function testCreateFromValidConfig() : void {
         $wi = new WrapIt(array(

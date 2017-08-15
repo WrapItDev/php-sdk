@@ -8,5 +8,10 @@
     },
     "autoload": {
         "psr-4": {"WrapIt\\": "src/WrapIt/"}
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "WrapIt\\Tests\\": "tests/"
+        }
     }
 }
