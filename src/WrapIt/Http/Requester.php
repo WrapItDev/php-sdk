@@ -3,7 +3,7 @@
 namespace WrapIt\Http;
 
 use WrapIt\Exceptions\WrapItParameterException;
-//use WrapIt\Exceptions\WrapItHTTPException;
+use WrapIt\Exceptions\WrapItHTTPException;
 
 /**
  * Class Requester
