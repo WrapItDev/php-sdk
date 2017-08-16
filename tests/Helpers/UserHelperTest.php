@@ -15,9 +15,9 @@ final class UserHelperTest extends TestCase {
 
     protected function setUp() {
         $wi = new WrapIt(array(
-            "domain" => "api.wrapit.hu",
-            "client_id" => "test_client_id",
-            "client_secret" => "test_client_secret"
+            "domain" => "test.wrapit.hu",
+            "client_id" => "2f32225f2fca95e119e82b47bf1fa091",
+            "client_secret" => "YZubMTvz-Bo7W3slenIEInayXuvwU7BtUwIgD4TB589Qzp1SR-WalwN9f9u04whM"
         ));
         $this->helper = new WrapItUserHelper($wi, "example_token");
     }
