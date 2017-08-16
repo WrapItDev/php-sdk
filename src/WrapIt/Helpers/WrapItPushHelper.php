@@ -50,6 +50,8 @@ class WrapItPushHelper {
         if (isset($data["access_token"])) {
             $this->access_token = $data["access_token"];
             return $this->access_token;
+        } else if (isset($data["error"])) {
+            throw new WrapItParameterException($data["error"]["message"]);
         }
         throw new WrapItParameterException("Invalid domain or client credentials");
     }
