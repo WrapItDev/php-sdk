@@ -82,7 +82,7 @@ abstract class Requester {
         curl_close($ch);
 
         if ($response_header["http_code"] == 0) {
-            throw new WrapItHTTPException("HTTP Connection error");
+            throw new WrapItHTTPException("HTTP Connection error: ".$result);
         }
 
         switch ($data["response_type"]) {
