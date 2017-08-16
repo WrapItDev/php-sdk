@@ -11,16 +11,16 @@ build:
     nodes:
         php54:
             environment:
-                php: 5.4.41
+                php: 5.4
         php55:
             environment:
-                php: 5.5.25
+                php: 5.5
         php56:
             environment:
-                php: 5.6.9
+                php: 5.6
         php70:
             environment:
-                php: 7.0.20
+                php: 7.0
         php71:
             environment:
-                php: 7.1.6
+                php: 7.1
