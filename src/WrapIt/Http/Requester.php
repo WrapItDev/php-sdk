@@ -81,9 +81,9 @@ abstract class Requester {
         $response_header = curl_getinfo($ch);
         curl_close($ch);
 
-        /*if ($response_header["http_code"] > 299) {
-            throw new WrapItHTTPException("HTTP Code: ".$response_header["http_code"]);
-        }*/
+        if ($response_header["http_code"] == 0) {
+            throw new WrapItHTTPException("HTTP Connection error");
+        }
 
         switch ($data["response_type"]) {
             case "json":
