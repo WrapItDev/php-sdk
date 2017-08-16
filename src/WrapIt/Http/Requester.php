@@ -27,12 +27,12 @@ abstract class Requester {
             "method" => null
         ), $data);
 
-        if ($data["url"] == null) {
+        if ($data["url"] === null) {
             throw new WrapItParameterException("Missing data: url");
         }
 
         $url = $data["url"];
-        if ($data["get"] != null && count($data["get"]) > 0) {
+        if ($data["get"] !== null && count($data["get"]) > 0) {
             $url .= "?" . http_build_query($data["get"]);
         }
 
@@ -62,16 +62,15 @@ abstract class Requester {
                     break;
                 default:
                     throw new WrapItParameterException("Invalid body type");
-                    break;
             }
 
-            if ($data["method"] != null) {
+            if ($data["method"] !== null) {
                 curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $data["method"]);
             } else {
                 curl_setopt($ch, CURLOPT_POST, true);
             }
         }
-        if ($data["headers"] != null && count($data["headers"]) > 0) {
+        if ($data["headers"] !== null && count($data["headers"]) > 0) {
             curl_setopt($ch, CURLOPT_HTTPHEADER, $data["headers"]);
         }
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -82,7 +81,7 @@ abstract class Requester {
         curl_close($ch);
 
         if ($response_header["http_code"] == 0) {
-            throw new WrapItHTTPException("HTTP Connection error: ".$result);
+            throw new WrapItHTTPException("HTTP Connection error");
         }
 
         switch ($data["response_type"]) {
@@ -93,10 +92,8 @@ abstract class Requester {
                 } else {
                     return $result;
                 }
-                break;
             default:
                 return $result;
-                break;
         }
     }
 
