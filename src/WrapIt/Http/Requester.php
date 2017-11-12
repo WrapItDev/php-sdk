@@ -24,7 +24,8 @@ abstract class Requester {
             "headers" => array(),
             "response_type" => "json",
             "useragent" => "WrapIt-HTTP/1.0",
-            "method" => null
+            "method" => null,
+            "compression" => "none"
         ), $data);
 
         if ($data["url"] === null) {
@@ -69,6 +70,10 @@ abstract class Requester {
             } else {
                 curl_setopt($ch, CURLOPT_POST, true);
             }
+        } else {
+            if ($data["method"] !== null) {
+                curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $data["method"]);
+            }
         }
         if ($data["headers"] !== null && count($data["headers"]) > 0) {
             curl_setopt($ch, CURLOPT_HTTPHEADER, $data["headers"]);
@@ -76,6 +81,17 @@ abstract class Requester {
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+        switch ($data["compression"]) {
+            case "gzip":
+                curl_setopt($ch, CURLOPT_ENCODING , "gzip");
+                break;
+            default:
+                break;
+        }
+        if ($data["response_type"] == "head") {
+            curl_setopt($ch, CURLOPT_HEADER, 1);
+        }
         $result = curl_exec($ch);
         $response_header = curl_getinfo($ch);
         curl_close($ch);
@@ -92,6 +108,8 @@ abstract class Requester {
                 } else {
                     return $result;
                 }
+            case "head":
+                return  $result;
             default:
                 return $result;
         }
