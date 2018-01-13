@@ -6,34 +6,27 @@ use WrapIt\WrapIt;
 use WrapIt\Exceptions\WrapItParameterException;
 use WrapIt\Exceptions\WrapItResponseException;
 use WrapIt\Http\WrapItUserRequester;
+use WrapIt\Helpers\Helper;
 
 /**
  * Class WrapItUserHelper
  *
  * @package WrapIt
  */
-class WrapItUserHelper {
+class WrapItUserHelper extends Helper {
 
-    private $access_token = null;
-
-    private $client_id = null;
-    private $client_secret = null;
-
-    private $requester;
+    protected $access_token = null;
+    protected $user_requester;
 
     public function __construct($wi, $access_token) {
-        if (!($wi instanceof WrapIt)) {
-            throw new WrapItParameterException("WrapIt class required");
-        }
+        parent::__construct($wi);
 
-        $this->client_id = $wi->getClientId();
-        $this->client_secret = $wi->getClientSecret();
         $this->access_token = $access_token;
-        $this->requester = new WrapItUserRequester($wi->getDomain(), $access_token);
+        $this->user_requester = new WrapItUserRequester($wi->getDomain(), $access_token);
     }
 
     public function getUserData($userid = "me") {
-        $data = $this->requester->get("people/$userid");
+        $data = $this->user_requester->get("people/$userid");
         if ($data != null && !isset($data["error"])) {
             return $data;
         } else {
@@ -42,7 +35,7 @@ class WrapItUserHelper {
     }
 
     public function getProfilePicture($userid = "me") {
-        $data = $this->requester->get("people/$userid/picture", array("redirect" => "false"));
+        $data = $this->user_requester->get("people/$userid/picture", array("redirect" => "false"));
         if (isset($data["error"])) {
             throw new WrapItResponseException($data["error"]["message"]);
         }

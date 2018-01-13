@@ -6,32 +6,24 @@ use WrapIt\WrapIt;
 use WrapIt\Exceptions\WrapItParameterException;
 use WrapIt\Http\WrapItApiRequester;
 use WrapIt\Http\WrapItPushRequester;
+use WrapIt\Helpers\Helper;
 
 /**
  * Class WrapItUserHelper
  *
  * @package WrapIt
  */
-class WrapItPushHelper {
+class WrapItPushHelper extends Helper {
 
-    private $access_token = null;
+    protected $access_token = null;
 
-    private $client_id = null;
-    private $client_secret = null;
-    private $domain = null;
-
-    private $requester;
+    protected $push_requester;
 
     public function __construct($wi, $access_token = null) {
-        if (!($wi instanceof WrapIt)) {
-            throw new WrapItParameterException("WrapIt class required");
-        }
+        parent::__construct($wi);
 
-        $this->client_id = $wi->getClientId();
-        $this->client_secret = $wi->getClientSecret();
         $this->access_token = $access_token;
-        $this->domain = $wi->getDomain();
-        $this->requester = new WrapItPushRequester($this->domain, $this->getAccessToken());
+        $this->push_requester = new WrapItPushRequester($this->domain, $this->getAccessToken());
     }
 
     private function getAccessToken() {
@@ -39,9 +31,7 @@ class WrapItPushHelper {
             return $this->access_token;
         }
 
-        $apirequester = new WrapItApiRequester($this->domain);
-
-        $data = $apirequester->post("access_token", array(
+        $data = $this->api_requester->post("access_token", array(
             "client_id" => $this->client_id,
             "client_secret" => $this->client_secret,
             "grant_type" => "app_token"
@@ -57,7 +47,7 @@ class WrapItPushHelper {
     }
 
     public function sendPush($userid, $data) {
-        $data = $this->requester->post("pushservice/$userid", $data);
+        $data = $this->push_requester->post("pushservice/$userid", $data);
     }
 
     public function getPushTemplate() {

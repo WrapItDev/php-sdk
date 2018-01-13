@@ -6,28 +6,14 @@ use WrapIt\WrapIt;
 use WrapIt\Exceptions\WrapItParameterException;
 use WrapIt\Exceptions\WrapItResponseException;
 use WrapIt\Http\WrapItApiRequester;
+use WrapIt\Helpers\Helper;
 
 /**
  * Class WrapItLoginHelper
  *
  * @package WrapIt
  */
-class WrapItLoginHelper {
-
-    private $client_id = null;
-    private $client_secret = null;
-
-    private $requester;
-
-    public function __construct($wi) {
-        if (!($wi instanceof WrapIt)) {
-            throw new WrapItParameterException("WrapIt class required");
-        }
-
-        $this->client_id = $wi->getClientId();
-        $this->client_secret = $wi->getClientSecret();
-        $this->requester = new WrapItApiRequester($wi->getDomain());
-    }
+class WrapItLoginHelper extends Helper {
 
     public function generateLoginUrl($opt) {
         $opt = array_merge(array(
@@ -52,7 +38,7 @@ class WrapItLoginHelper {
             $parameters["state"] = $opt["state"];
         }
 
-        return "https://" . $this->requester->getDomain() . "/auth?" . http_build_query($parameters);
+        return "https://" . $this->api_requester->getDomain() . "/auth?" . http_build_query($parameters);
     }
 
     public function exchangeAccessToken($opt) {
@@ -81,7 +67,7 @@ class WrapItLoginHelper {
             $post["expire"] = $opt["expire"];
         }
 
-        $data = $this->requester->post("access_token", $post);
+        $data = $this->api_requester->post("access_token", $post);
 
         if (!isset($data["error"]) && isset($data["access_token"])) {
             return $data["access_token"];
