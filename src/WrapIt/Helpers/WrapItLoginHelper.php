@@ -15,6 +15,10 @@ use WrapIt\Helpers\Helper;
  */
 class WrapItLoginHelper extends Helper {
 
+    public function __construct($wi) {
+        parent::__construct($wi);
+    }
+
     public function generateLoginUrl($opt) {
         $opt = array_merge(array(
             "redirect_uri" => null,
