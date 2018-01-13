@@ -12,7 +12,7 @@ use WrapIt\Http\WrapItApiRequester;
  *
  * @package WrapIt
  */
-abstract class WrapItApiHelper {
+abstract class Helper {
 
     protected $client_id = null;
     protected $client_secret = null;
