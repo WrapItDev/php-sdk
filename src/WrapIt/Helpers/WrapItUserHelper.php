@@ -22,7 +22,7 @@ class WrapItUserHelper extends Helper {
         parent::__construct($wi);
 
         $this->access_token = $access_token;
-        $this->user_requester = new WrapItUserRequester($wi->getDomain(), $access_token);
+        $this->user_requester = new WrapItUserRequester($this->domain, $access_token);
     }
 
     public function getUserData($userid = "me") {

@@ -16,6 +16,7 @@ abstract class Helper {
 
     protected $client_id = null;
     protected $client_secret = null;
+    protected $domain = null;
 
     protected $api_requester;
 
@@ -26,6 +27,7 @@ abstract class Helper {
 
         $this->client_id = $wi->getClientId();
         $this->client_secret = $wi->getClientSecret();
+        $this->domain = $wi->getDomain();
         $this->api_requester = new WrapItApiRequester($wi->getDomain());
     }
 }
